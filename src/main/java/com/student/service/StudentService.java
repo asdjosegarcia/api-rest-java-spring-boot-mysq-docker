@@ -5,19 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-<<<<<<< HEAD
 import com.student.dao.StudentRepository; //import from dao
 import com.student.model.Student;
 
 @Service //indicates that this class is a service layer in spring
 //service layer
 //contains the bussines logic of the application. it prosses data recived from the DAO layer and prepares it from the controler. It also handles other business-related tasks such as validation, computations, etc.
-=======
-import com.student.dao.StudentRepository; //import 
-import com.student.model.Student;
-
-@Service //indicates that this class is a service layer in spring
->>>>>>> f0b0e19 (first commit)
 public class StudentService {
     @Autowired //
     StudentRepository StudentRepository;
@@ -45,11 +38,6 @@ public class StudentService {
     //Delete student
     public void deleteStudentById(int id){
         StudentRepository.deleteById(id);
-<<<<<<< HEAD
     }
 
-=======
-
-    }
->>>>>>> f0b0e19 (first commit)
 }
