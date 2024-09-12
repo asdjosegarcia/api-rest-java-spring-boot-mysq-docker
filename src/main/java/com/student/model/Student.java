@@ -3,46 +3,56 @@ package com.student.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.Id; //these imports are brining in annotations
 
-@Entity//The framework will map the class to a database table, and each instance of the class will represent a row in the table.
-public class Student {
-     // Attributes  
-     //can be accesed by outside the class
-    @Id//The framework will treat this field as the unique identifier for the entity in the database.
-    @GeneratedValue(strategy = GenerationType.AUTO) //Delegates the decision of witch generation strategy to the persistence provider
+@Entity//anotatioons 
+public class Student {//class
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
+    private String DOB; // dathe of birth
     private String fatherName;
     private String motherName;
 
-    public Student() {
-    }
+    
 
-    // Constructor
-    //when create a object with the class, 
-    public Student(int id, String name, String fatherName, String motherName) { //
+    public Student() {//no argument constructor
+        super();// is added by java witout extra pass Even if it does not exist
+    }
+    
+
+    public Student(int id, String name, String dOB, String fatherName, String motherName) {//contructor with arguments
         this.id = id;
         this.name = name;
+        DOB = dOB;
         this.fatherName = fatherName;
         this.motherName = motherName;
     }
 
-
-    public int getId() {
+    public int getId() {//getter and setters
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
     }
-    //Geter
+
     public String getName() {
         return name;
     }
-    //Setter
+
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDOB() {
+        return DOB;
+    }
+
+    public void setDOB(String dOB) {
+        DOB = dOB;
     }
 
     public String getFatherName() {
@@ -63,8 +73,8 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student [id=" + id + ", name=" + name + ", fatherName=" + fatherName + ", motherName=" + motherName
-                + "]";
+        return "Student [id=" + id + ", name=" + name + ", DOB=" + DOB + ", fatherName=" + fatherName + ", motherName="
+                + motherName + "]";
     }
 
 }
