@@ -1,0 +1,20 @@
+meta {
+  name: Save-Student
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/studentService/saveStudent
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name":"Student6",
+    "dob":"21-09-2024",
+    "fatherName":"Father6",
+    "motherName":"Mother6"
+  }
+}

@@ -1,0 +1,21 @@
+meta {
+  name: Update-Student
+  type: http
+  seq: 5
+}
+
+put {
+  url: http://localhost:8080/studentService/updateStudent
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": 2,
+    "name": "Student2.1",
+    "fatherName": "Father2.1",
+    "motherName": "Mother2.1",
+    "dob": "21-08-2024"
+  }
+}
